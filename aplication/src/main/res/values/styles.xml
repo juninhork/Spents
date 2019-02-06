@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DateTextField">
+        <attr name="dialogType" format="enum">
+            <enum name="full" value="0" />
+            <enum name="month" value="1" />
+            <enum name="year" value="2" />
+            <enum name="monthAndYear" value="3" />
+
+        </attr>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_red">#ff2814</color>
+    <color name="colorOrange">#ff5e14</color>
+    <color name="colorGreen">#7df517</color>
+    <color name="color_yellow">#cac000</color>
+    <color name="color_principal">#0099CC</color>
+
+    <color name="titulo">#015488</color>
+    <color name="categoria_alimentacao">#9FC5F8</color>
+    <color name="categoria_hospedagem">#6FA8DC</color>
+    <color name="categoria_transporte">#0099CC</color>
+    <color name="categoria_outros">#ACBFD5</color>
+
+    <color name="color_status_bar">#ed5b943c</color>
+    <color name="color_button">#68b141</color>
+    <color name="gt_transparent">#00000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="gt_10_transparent">#ddd6d6d6</color>
+    <color name="gt_gray">#ddb4b4b4</color>
+    <color name="gt_alpha_white">#E6F3F3F3</color>
+    <color name="gt_text_black">#000000</color>
+    <color name="contentDividerLine">#e0e0e0</color>
+</resources>

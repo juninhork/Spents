@@ -34,7 +34,6 @@
     <string name="december">Dezembro</string>
 
 
-
     <!--Menssagem de Seção-->
     <string name="mensagem_sem_internet">Aconteceu uma falha na comunicação. Verifique sua rede.</string>
     <string name="mensagem_confirmacao_transf">Confirma esta transferência?</string>
@@ -52,6 +51,9 @@
     <string name="error_senhas_incompativeis">As duas senhas não coincidem.</string>
 
     <string name="mensagem_unexpected_error">Aconteceu algum erro inesperado</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

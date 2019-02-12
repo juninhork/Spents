@@ -34,6 +34,10 @@ public class CustomDateUtil {
         return result.length() == ONE_VALUE ? "0" + result : result;
     }
 
+    static public String getMonthName() {
+        return getMonthName(getCurrentMonth());
+    }
+
     static public String getCurrentDay() {
         String result = sCalendar.get(Calendar.DAY_OF_MONTH) + "";
         return result.length() == ONE_VALUE ? "0" + result : result;
@@ -121,11 +125,10 @@ public class CustomDateUtil {
      * @return nome do mês da data.
      * @throws ParseException
      */
-    public static String getMonthName(String date) throws ParseException {
+    public static String getMonthName(String date)  {
 
-        String month = getMonthFromDate(date);
-        int monthIndex = Integer.parseInt(month);
-
+        String month ="";
+        int monthIndex = Integer.valueOf(date);
 
         switch (monthIndex) {
 

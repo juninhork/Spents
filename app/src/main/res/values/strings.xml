@@ -4,8 +4,23 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_spent_add">SpentAddActivity</string>
+    <string name="prompt_date">Data Compra</string>
+    <string name="prompt_description">Descrição</string>
+    <string name="prompt_from_of_payment_list">Forma de Pagamento</string>
+
+    <string-array name="form_of_payment_list">
+        <item>Dinheiro</item>
+        <item>Cartão Debito</item>
+        <item>Cartão Crédito</item>
+        <item>Alimentação</item>
+        <item>Refeição</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="prompt_error">Campo Invalido</string>
+
+
 </resources>

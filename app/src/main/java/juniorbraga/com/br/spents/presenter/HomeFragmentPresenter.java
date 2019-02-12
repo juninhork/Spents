@@ -24,13 +24,11 @@ public class HomeFragmentPresenter  extends BasePresenter<ISpent.GetListSpent> {
     }
 
     public void getAllSpents(){
-        mProgresDialogUtil.show("Buscando Dados","Aguarde");
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
                 List<Spent> list = db.spentsDao().getAll();
                 mView.showList(list);
-                mProgresDialogUtil.dismiss();
                 return null;
             }
         }.execute();

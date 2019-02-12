@@ -14,6 +14,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
+import juniorbraga.com.br.spents.enums.FormOfPaymentEnum;
 import juniorbraga.com.br.spents.model.Spent;
 import juniorbraga.com.br.spents.model.SpentChart;
 
@@ -109,10 +110,13 @@ public class CustomChart {
     }
 
     public void initData(List<Spent> spentList,Context context,PieChart chart){
+        this.spentChartList = new ArrayList<SpentChart>();
+
         for(Spent spent:spentList){
             SpentChart spentChart = new SpentChart();
             String value = String.valueOf(spent.getValuer());
-            spentChart.setTypeSpend(spent.getDescription());
+
+            spentChart.setTypeSpend(FormOfPaymentEnum.getFormOfPayment(spent.getFormOfPayment()).getDescriptionStr());
 
             if(value != null)
                 spentChart.setValue(Float.valueOf(value));

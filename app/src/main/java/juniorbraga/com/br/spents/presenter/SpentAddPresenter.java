@@ -24,6 +24,7 @@ public class SpentAddPresenter extends BasePresenter<ISpent.AddSpent> {
             @Override
             protected Void doInBackground(Void... voids) {
                 db.spentsDao().insertAll(spent);
+                mView.showSucessAdd();
                 return null;
             }
         }.execute();

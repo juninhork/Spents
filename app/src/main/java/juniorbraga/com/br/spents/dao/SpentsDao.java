@@ -18,8 +18,8 @@ public interface SpentsDao {
 //    @Query("SELECT * FROM spent WHERE id IN (:id)")
 //    List<Spent> loadAllByIds(int[] userIds);
 
-//    @Query("SELECT * FROM spent WHERE descricao" )
-//    List<Spent> findByName(String first);
+    @Query("SELECT * FROM spent WHERE spent.formOfPayment IN (:formOfPayment) " )
+    List<Spent> findByName(String formOfPayment);
 
     @Insert
     void insertAll(Spent spents);

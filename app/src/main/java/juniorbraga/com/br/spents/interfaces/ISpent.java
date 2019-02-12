@@ -10,7 +10,6 @@ public interface ISpent {
 
     interface AddSpent extends IResponse {
         void showSucessAdd();
-        void showError(String Error);
     }
 
     interface GetListSpent extends IResponse{

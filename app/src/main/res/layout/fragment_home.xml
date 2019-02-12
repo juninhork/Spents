@@ -17,10 +17,12 @@
             android:padding="@dimen/activity_horizontal_margin">
 
             <TextView
+                android:id="@+id/monthDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Paulo Braga de Assis Junior"
-                android:textColor="@color/colorPrimary" />
+                android:text="Março 2018"
+                android:textSize="18dp"
+                android:textColor="@color/colorPrimaryDark" />
 
             <com.github.mikephil.charting.charts.PieChart
                 android:id="@+id/chart1"

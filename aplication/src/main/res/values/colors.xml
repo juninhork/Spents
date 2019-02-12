@@ -25,4 +25,9 @@
     <color name="gt_alpha_white">#E6F3F3F3</color>
     <color name="gt_text_black">#000000</color>
     <color name="contentDividerLine">#e0e0e0</color>
+
+    <color name="error">#ff3c45</color>
+    <color name="sucssed">#05f1af</color>
+    <color name="ok_background_color">#e3000000</color>
+
 </resources>

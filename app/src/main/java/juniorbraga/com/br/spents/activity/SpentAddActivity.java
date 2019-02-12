@@ -1,77 +1,99 @@
 package juniorbraga.com.br.spents.activity;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Switch;
+
+import com.example.aplication.utils.CustomCurrencyTextWatcher;
+import com.example.aplication.utils.datetextfield.CustomDateTextField;
+import com.example.aplication.utils.datetextfield.CustomDateUtil;
 
 import juniorbraga.com.br.spents.R;
-import juniorbraga.com.br.spents.interfaces.ISpent;
-import juniorbraga.com.br.spents.model.Spent;
-import juniorbraga.com.br.spents.presenter.SpentAddPresenter;
-import juniorbraga.com.br.spents.util.UtilsActivity;
+import juniorbraga.com.br.spents.enums.FormOfPaymentEnum;
+import juniorbraga.com.br.spents.viewcontroller.SpentAddViewController;
 
-public class SpentAddActivity extends CustomToolbarActivity implements ISpent.AddSpent , View.OnClickListener {
+public class SpentAddActivity extends CustomToolbarActivity implements View.OnClickListener,AdapterView.OnItemSelectedListener {
 
-    private SpentAddPresenter spentAddPresenter;
+    private CustomDateTextField payday;
+    private EditText value;
+    private EditText description;
+    private Spinner formOfPaymentSpiner;
+    private Switch scheduled;
+    private SpentAddViewController spentAddViewController;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.setResLayoutId(R.layout.activity_spent_add);
         super.onCreate(savedInstanceState);
         super.hideAdd();
-        this.spentAddPresenter = new SpentAddPresenter(this,this);
-    }
 
+        this.payday = (CustomDateTextField)findViewById(R.id.payday);
+        this.value = (EditText) findViewById(R.id.value);
+        this.description = (EditText) findViewById(R.id.description);
+        this.formOfPaymentSpiner = (Spinner)findViewById(R.id.formOfPaymentSpiner);
+        this.scheduled = (Switch) findViewById(R.id.scheduled);
+        this.formOfPaymentSpiner.setOnItemSelectedListener(this);
 
-    private void newSpent(){
+        findViewById(R.id.saveSpent).setOnClickListener(this);
+        this.value.addTextChangedListener(new CustomCurrencyTextWatcher(this.value));
+        this.payday.setFragmentManager(getSupportFragmentManager());
+        this.payday.setText(CustomDateUtil.getTodayDate());
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        Spent spent = new Spent();
-        spent.setDescription("Janta Caldo");
-        spent.setFormOfPayment(0);
-        spent.setPaidOut(true);
-        spent.setPayday("2018-02-05");
-        spent.setScheduled(false);
-        spent.setTypeSpend(0);
-        spent.setValuer(32.3);
-
-        this.spentAddPresenter.insertSpent(spent);
-    }
-
-    @Override
-    public void showSucessAdd() {
-
-    }
-
-    @Override
-    public void showError(String Error) {
-
+        this.spentAddViewController = new SpentAddViewController(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-
+            case R.id.saveSpent:
+                spentAddViewController.newSpent();
+                break;
         }
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String descrpition = parent.getItemAtPosition(position).toString();
+        this.spentAddViewController.setPositionFormOfPaymentSpiner(FormOfPaymentEnum.getFormOfPayment(position));
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    public CustomDateTextField getPayday() {
+        return payday;
+    }
+
+    public void setPayday(CustomDateTextField payday) {
+        this.payday = payday;
+    }
+
+    public EditText getValue() {
+        return value;
+    }
+
+    public void setValue(EditText value) {
+        this.value = value;
+    }
+
+    public EditText getDescription() {
+        return description;
+    }
+
+    public void setDescription(EditText description) {
+        this.description = description;
+    }
+
+    public Switch getScheduled() {
+        return scheduled;
+    }
+
+    public void setScheduled(Switch scheduled) {
+        this.scheduled = scheduled;
     }
 }

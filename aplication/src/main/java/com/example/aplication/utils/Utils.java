@@ -1,6 +1,8 @@
 package com.example.aplication.utils;
 
 import android.content.Context;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -170,4 +172,42 @@ public class Utils {
             return false;
         }
     }
+
+    public static boolean allNotNull(Object... objects){
+        boolean status = true;
+        if(!isEmpty(objects)){
+            for(Object obj: objects){
+                if(isEmpty(obj)){
+                    status = false;
+                }
+            }
+        }else{
+            status = false;
+        }
+        return status;
+    }
+
+    public static boolean isEmpty(Object obj) {
+        boolean status = false;
+        if (obj == null) {
+            status = true;
+        }
+        return status;
+    }
+
+    public static double getDoubleValue(String value){
+        String valueString = value.replace("R$","").replace(" ","").replace(".","");
+        try{
+            return Double.valueOf(valueString.replace(",","."));
+        }catch (Exception e){
+            return 0.0;
+        }
+    }
+
+    public static void removeFragment(Fragment fragment, FragmentManager fragmentManager){
+        android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.remove(fragment);
+        fragmentTransaction.commit();
+    }
+
 }

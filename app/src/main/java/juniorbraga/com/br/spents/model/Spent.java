@@ -4,6 +4,8 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+import juniorbraga.com.br.spents.enums.FormOfPaymentEnum;
+
 @Entity(tableName = "spent")
 public class Spent {
 
@@ -31,6 +33,28 @@ public class Spent {
 
     @ColumnInfo
     private Double valuer;
+
+    @ColumnInfo
+    private boolean isRepeat;
+
+    @ColumnInfo
+    private long numberOfInstallments;
+
+    public long getNumberOfInstallments() {
+        return numberOfInstallments;
+    }
+
+    public void setNumberOfInstallments(long numberOfInstallments) {
+        this.numberOfInstallments = numberOfInstallments;
+    }
+
+    public boolean isRepeat() {
+        return isRepeat;
+    }
+
+    public void setRepeat(boolean repeat) {
+        isRepeat = repeat;
+    }
 
     public int getId() {
         return id;
